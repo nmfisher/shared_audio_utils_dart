@@ -5,6 +5,8 @@ import 'dart:async';
 
 enum AudioSource { Asset, File }
 
+enum AudioEncoding { PCM16, OGG, OPUS, MP3 }
+
 abstract class AudioService {
   Logger get log => Logger(this.runtimeType.toString());
 
@@ -29,15 +31,16 @@ abstract class AudioService {
     AudioSource source = AudioSource.File,
     String? package,
     Function? onBegin,
+    Function? onComplete,
     int sampleRate = 16000,
     double speed = 1.0,
   });
 
   ///
-  /// Plays the 16 bit PCM audio contained in [data].
+  /// Plays the audio contained in [data] encoded with [encoding].
   ///
-  Future playBuffer(Uint8List data, int frequency, bool stereo,
-      {void Function()? onComplete});
+  Future<void Function()> playBuffer(Uint8List data, int frequency, bool stereo,
+      {void Function()? onComplete, AudioEncoding encoding = AudioEncoding.PCM16});
 
   ///
   /// Plays the 16 bit PCM audio contained in [data].
