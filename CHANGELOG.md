@@ -1,3 +1,4 @@
-## 1.0.0
+## 0.1.0
 
-- Initial version.
+- Change AudioEncoding enum to enhanced enum.
+- add getDuration method
