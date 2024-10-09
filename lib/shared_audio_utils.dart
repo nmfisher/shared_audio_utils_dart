@@ -1,6 +1,5 @@
-
 library;
 
 export 'src/audio_service.dart';
+export 'src/audio_encoding.dart';
 
-// TODO: Export any libraries intended for clients of this package.

@@ -1,6 +1,6 @@
 name: shared_audio_utils
-description: A starting point for Dart libraries or applications.
-version: 0.1.0
+description: Generic interface for audio playback.
+version: 0.2.0
 repository: https://github.com/nmfisher/shared_audio_utils
 
 environment:
@@ -8,6 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  logging: ^1.2.0
   # path: ^1.8.0
 
 dev_dependencies:
